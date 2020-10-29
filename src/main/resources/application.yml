@@ -1,0 +1,34 @@
+## System.properties ##
+server:
+  port: 8086
+  shutdown: graceful
+management:
+  server:
+    port: 8081
+
+logging:
+  level:
+    root: INFO
+
+## Hosts ##
+endpoint:
+  url: https://losore-tlg-api.apps.ocp-ut.regsys.brreg.no
+
+## maskinporten url ##
+jwt:
+  test:
+    audience: https://oidc-ver2.difi.no/idporten-oidc-provider/
+    endpoint: https://oidc-ver2.difi.no/idporten-oidc-provider/token
+  prod:
+    audience: https://oidc-prod.difi.no/idporten-oidc-provider/
+    endpoint: https://oidc-prod.difi.no/idporten-oidc-provider/token
+
+## token ##
+token:
+  client: <klient-id>
+  scope: <scope>
+
+## virksomhet  ##
+virksomhet:
+  privateKey: -----BEGIN PRIVATE KEY----- <hentes fra JKS> -----END PRIVATE KEY-----
+  certificate: -----BEGIN CERTIFICATE----- <hentes fra JKS> -----END CERTIFICATE-----
