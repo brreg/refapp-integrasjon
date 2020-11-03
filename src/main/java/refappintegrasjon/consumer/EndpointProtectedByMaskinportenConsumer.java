@@ -21,19 +21,20 @@ public class EndpointProtectedByMaskinportenConsumer {
 
     private final RestTemplate restTemplate;
     private final TokenConsumer tokenConsumer;
-
-    @Value("${endpoint.url}")
-    private String host;
-    @Value("${token.client")
-    private String client;
-    @Value("${token.scope")
-    private String scope;
-
+    private final String host;
+    private final String client;
+    private final String scope;
     private String orgnummer = "810727462";
 
-    public EndpointProtectedByMaskinportenConsumer(RestTemplate restTemplate, TokenConsumer tokenConsumer) {
+    public EndpointProtectedByMaskinportenConsumer(RestTemplate restTemplate, TokenConsumer tokenConsumer,
+                                                   @Value("${endpoint.url}") String host,
+                                                   @Value("${token.client") String client,
+                                                   @Value("${token.scope") String scope) {
         this.restTemplate = restTemplate;
         this.tokenConsumer = tokenConsumer;
+        this.host = host;
+        this.client = client;
+        this.scope = scope;
     }
 
     public ResponseEntity<String> callEnpointProtectedByMaskinporten() {
@@ -48,10 +49,12 @@ public class EndpointProtectedByMaskinportenConsumer {
                     HttpMethod.GET,
                     createRequestEntity(), String.class);
         } catch (HttpClientErrorException e) {
-            log.error("Noe gikk galt i kallet mot endepunkt" + e);
+            String message = "Noe gikk galt i kallet mot endepunkt";
+            log.error(message + e);
             throw new RuntimeException();
         } catch (JwtException e) {
-            log.error("Noe gikk galt under henting av jwt token" + e);
+            String message = "Noe gikk galt under henting av jwt token";
+            log.error(message + e);
             throw new RuntimeException();
         }
     }
@@ -59,7 +62,7 @@ public class EndpointProtectedByMaskinportenConsumer {
     private HttpEntity<Void> createRequestEntity() throws JwtException {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
-        headers.add("Authorization", "Bearer " + tokenConsumer.hentToken(scope, client));
+        headers.add(HttpHeaders.AUTHORIZATION, "Bearer " + tokenConsumer.hentToken(scope, client));
         return new HttpEntity<>(headers);
     }
 }

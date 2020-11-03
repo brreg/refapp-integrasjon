@@ -18,11 +18,9 @@ import java.util.Base64;
 @Service
 public class SertifikatService {
 
-    @Value("${virksomhet.privateKey}")
-    private String privateKey;
 
-    @Value("${virksomhet.certificate}")
-    private String certificate;
+    private final String privateKey;
+    private final String certificate;
 
     private static final String PK_PREFIX = "-----BEGIN PRIVATE KEY-----";
     private static final String PK_SUFFIX = "-----END PRIVATE KEY-----";
@@ -31,6 +29,10 @@ public class SertifikatService {
     private static final String FACTORY_TYPE = "X.509";
     private static final String CRYPTOSYSTEM = "RSA";
 
+    public SertifikatService(@Value("${virksomhet.privateKey}") String privateKey, @Value("${virksomhet.certificate}") String certificate) {
+        this.privateKey = privateKey;
+        this.certificate = certificate;
+    }
 
     public PrivateKey getPrivateKey() throws SertifikatException {
         String privateKeyContent = privateKey

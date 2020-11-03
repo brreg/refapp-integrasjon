@@ -9,7 +9,11 @@ plugins {
 sourceCompatibility = '1.8'
 
 dependencies {
+    compile 'org.bitbucket.b_c:jose4j:0.7.2'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
-    implementation 'no.brreg.felles.sikkerhet:heimdall-spring-boot-starter:1.1.13'
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.security:spring-security-oauth2-client'
 }

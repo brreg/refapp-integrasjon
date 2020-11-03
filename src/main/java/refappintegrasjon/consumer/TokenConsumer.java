@@ -1,7 +1,7 @@
 package refappintegrasjon.consumer;
 
 import lombok.extern.slf4j.Slf4j;
-import org.jose4j.json.internal.json_simple.JSONObject;
+import net.minidev.json.JSONObject;
 import org.jose4j.jws.AlgorithmIdentifiers;
 import org.jose4j.jws.JsonWebSignature;
 import org.jose4j.jwt.JwtClaims;
@@ -25,16 +25,15 @@ public class TokenConsumer {
     private static final int EXP_IN_MIN = 2;
     private static final int NBF_IN_MIN = 2;
 
-    @Value("${jwt.test.audience}")
-    private String audience;
-
-    @Value("${jwt.test.endpoint}")
-    private String tokenEndpoint;
-
+    private final String audience;
+    private final String tokenEndpoint;
     private final RestTemplate restTemplate;
     private final SertifikatService sertifikatService;
 
-    public TokenConsumer(RestTemplate restTemplate, SertifikatService sertifikatService) {
+    public TokenConsumer(@Value("${jwt.audience}") String audience, @Value("${jwt.endpoint}") String tokenEndpoint,
+                         RestTemplate restTemplate, SertifikatService sertifikatService) {
+        this.audience = audience;
+        this.tokenEndpoint = tokenEndpoint;
         this.restTemplate = restTemplate;
         this.sertifikatService = sertifikatService;
     }

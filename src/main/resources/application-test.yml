@@ -1,0 +1,8 @@
+## Hosts ##
+endpoint:
+  url: https://losore-tlg-api.apps.ocp-ppe.regsys.brreg.no
+
+## maskinporten url ##
+jwt:
+  audience: https://oidc-ver2.difi.no/idporten-oidc-provider/
+  endpoint: https://oidc-ver2.difi.no/idporten-oidc-provider/token
