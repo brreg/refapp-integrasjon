@@ -28,8 +28,8 @@ public class EndpointProtectedByMaskinportenConsumer {
 
     public EndpointProtectedByMaskinportenConsumer(RestTemplate restTemplate, TokenConsumer tokenConsumer,
                                                    @Value("${endpoint.url}") String host,
-                                                   @Value("${token.client") String client,
-                                                   @Value("${token.scope") String scope) {
+                                                   @Value("${token.client}") String client,
+                                                   @Value("${token.scope}") String scope) {
         this.restTemplate = restTemplate;
         this.tokenConsumer = tokenConsumer;
         this.host = host;
@@ -50,12 +50,12 @@ public class EndpointProtectedByMaskinportenConsumer {
                     createRequestEntity(), String.class);
         } catch (HttpClientErrorException e) {
             String message = "Noe gikk galt i kallet mot endepunkt";
-            log.error(message + e);
-            throw new RuntimeException();
+            log.error(message, e);
+            throw new RuntimeException(message, e);
         } catch (JwtException e) {
             String message = "Noe gikk galt under henting av jwt token";
-            log.error(message + e);
-            throw new RuntimeException();
+            log.error(message, e);
+            throw new RuntimeException(message, e);
         }
     }
 

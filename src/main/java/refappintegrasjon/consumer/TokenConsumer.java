@@ -1,7 +1,7 @@
 package refappintegrasjon.consumer;
 
 import lombok.extern.slf4j.Slf4j;
-import net.minidev.json.JSONObject;
+import org.jose4j.json.internal.json_simple.JSONObject;
 import org.jose4j.jws.AlgorithmIdentifiers;
 import org.jose4j.jws.JsonWebSignature;
 import org.jose4j.jwt.JwtClaims;

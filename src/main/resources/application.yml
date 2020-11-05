@@ -10,19 +10,14 @@ logging:
   level:
     root: INFO
 
-## Hosts ##
-endpoint:
-  url: https://losore-tlg-api.apps.ocp-ppe.regsys.brreg.no
-
-
-
 ##Se også dokumentasjon her for hvordan man får tak i klient id og scope: https://brreg.github.io/docs/apidokumentasjon/losoreregisteret/itu-utt/mp-integrasjonsveiledning/
-##Klient får man ved forespørsel fra fra difi
+##Client får man ved forespørsel fra fra difi
 ##Scope får man fra docs eller brsys
 ## token ##
 token:
  client: <klient-id>
-  scope: <scope>
+ scope: <scope>
+
 
 ## virksomhet  ##
 virksomhet:
