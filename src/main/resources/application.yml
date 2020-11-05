@@ -1,0 +1,25 @@
+## System.properties ##
+server:
+  port: 8086
+  shutdown: graceful
+management:
+  server:
+    port: 8081
+
+logging:
+  level:
+    root: INFO
+
+##Se også dokumentasjon her for hvordan man får tak i klient id og scope: https://brreg.github.io/docs/apidokumentasjon/losoreregisteret/itu-utt/mp-integrasjonsveiledning/
+##Client får man ved forespørsel fra fra difi
+##Scope får man fra docs eller brsys
+## token ##
+token:
+ client: <klient-id>
+ scope: <scope>
+
+
+## virksomhet  ##
+virksomhet:
+  privateKey: -----BEGIN PRIVATE KEY----- <private key> -----END PRIVATE KEY-----
+  certificate: -----BEGIN CERTIFICATE----- <certificate> -----END CERTIFICATE-----
