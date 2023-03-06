@@ -1,8 +1,16 @@
 ## Hosts ##
 endpoint:
-  url: https://losore-tlg-api.apps.ocp-ppe.regsys.brreg.no
+  url: https://losoreregisteret.ppe.brreg.no/registerinfo
 
-## maskinporten url ##
-jwt:
-  audience: https://oidc-ver2.difi.no/idporten-oidc-provider/
-  endpoint: https://oidc-ver2.difi.no/idporten-oidc-provider/token
+## Maskinporten ##
+issuer:
+audience: https://ver2.maskinporten.no/
+token.endpoint: https://ver2.maskinporten.no/token
+scope: brreg:losore/tlg
+
+keystore:
+  file:
+  password:
+  type:
+  alias:
+  alias.password:

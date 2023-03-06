@@ -10,16 +10,23 @@ logging:
   level:
     root: INFO
 
-##Se også dokumentasjon her for hvordan man får tak i klient id og scope: https://brreg.github.io/docs/apidokumentasjon/losoreregisteret/itu-utt/mp-integrasjonsveiledning/
+## Hosts ##
+endpoint:
+  url: <losore-tlg-url>
+
+##Se dokumentasjon her for hvordan man får tak i klient id og scope: https://brreg.github.io/docs/apidokumentasjon/losoreregisteret/itu-utt/mp-integrasjonsveiledning/
 ##Client får man ved forespørsel fra fra difi
 ##Scope får man fra docs eller brsys
-## token ##
-token:
- client: <klient-id>
- scope: <scope>
 
+issuer: <client_id>
+audience: https://ver2.maskinporten.no/
+token.endpoint: https://ver2.maskinporten.no/token
+scope: <scope>
 
-## virksomhet  ##
-virksomhet:
-  privateKey: -----BEGIN PRIVATE KEY----- <private key> -----END PRIVATE KEY-----
-  certificate: -----BEGIN CERTIFICATE----- <certificate> -----END CERTIFICATE-----
+keystore:
+  file: <path to keystore>
+  password: <keystore password>
+  type: <type>
+  alias: <keystore alias>
+  alias.password: <alias password>
+
