@@ -1,23 +1,23 @@
 package refappintegrasjon.controller;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import refappintegrasjon.consumer.EndpointProtectedByMaskinportenConsumer;
+import refappintegrasjon.consumer.LosoreTlgConsumer;
 
 @Slf4j
 @RestController
 public class Controller {
 
-    private final EndpointProtectedByMaskinportenConsumer endpointProtectedByMaskinportenConsumer;
+    private final LosoreTlgConsumer losoreTlgConsumer;
 
-    public Controller(EndpointProtectedByMaskinportenConsumer endpointProtectedByMaskinportenConsumer) {
-        this.endpointProtectedByMaskinportenConsumer = endpointProtectedByMaskinportenConsumer;
+    public Controller(LosoreTlgConsumer losoreTlgConsumer) {
+        this.losoreTlgConsumer = losoreTlgConsumer;
     }
 
     @GetMapping("test/maskinportintegrasjon")
-    public ResponseEntity<String> callConsumer() {
-        return endpointProtectedByMaskinportenConsumer.callEnpointProtectedByMaskinporten();
+    public JsonNode callConsumer() throws Exception {
+        return losoreTlgConsumer.oppslagVirksomhet();
     }
 }
