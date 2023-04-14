@@ -12,7 +12,7 @@ public class AppSecurity {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         // TODO: tilpass etter behov
-        http.authorizeHttpRequests().antMatchers("/**").permitAll();
+        http.authorizeHttpRequests().requestMatchers("/**").permitAll();
         return http.build();
     }
 }
