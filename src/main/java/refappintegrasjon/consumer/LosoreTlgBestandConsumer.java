@@ -92,6 +92,7 @@ public class LosoreTlgBestandConsumer {
                 .fromUriString(host)
                 .path("/api/v2/rettsstiftelse")
                 .pathSegment(typeBestand)
+                .queryParam("language", "NOB")
                 .build()
                 .toUri();
     }

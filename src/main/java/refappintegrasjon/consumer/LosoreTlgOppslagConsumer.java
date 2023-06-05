@@ -71,7 +71,8 @@ public class LosoreTlgOppslagConsumer {
         var uriComponentsBuilder = UriComponentsBuilder
                 .fromUriString(host)
                 .path("/api/v2/rettsstiftelse/")
-                .pathSegment(typeOppslag, id);
+                .pathSegment(typeOppslag, id)
+                .queryParam("language", "NOB");
 
         if (sluttbrukerOrgNr != null) {
             uriComponentsBuilder.queryParam("sluttbrukerOrgNr", sluttbrukerOrgNr);
