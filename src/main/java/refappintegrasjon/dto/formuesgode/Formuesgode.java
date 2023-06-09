@@ -8,6 +8,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.ZonedDateTime;
+
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.EXISTING_PROPERTY,
         visible = true, property = "identifiseringsmate")
 @JsonSubTypes({
@@ -27,4 +29,5 @@ public class Formuesgode {
     private String type;
     private String typeBeskrivelse;
     private Brok eierandel;
+    private ZonedDateTime tidspunktForAbandonering;
 }
