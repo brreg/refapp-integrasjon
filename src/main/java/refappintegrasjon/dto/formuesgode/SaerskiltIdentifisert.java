@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+import java.time.ZonedDateTime;
+
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
@@ -16,8 +18,14 @@ public class SaerskiltIdentifisert extends Formuesgode {
     private String identifiseringstypeBeskrivelse;
 
     @Builder
-    public SaerskiltIdentifisert(String type, String typeBeskrivelse, Brok eierandel, String identifikator, String identifiseringstype, String identifiseringstypeBeskrivelse) {
-        super(Identifiseringsmate.SARSKILT_IDENTIFISERT, type, typeBeskrivelse, eierandel);
+    public SaerskiltIdentifisert(String type,
+                                 String typeBeskrivelse,
+                                 Brok eierandel,
+                                 String identifikator,
+                                 String identifiseringstype,
+                                 String identifiseringstypeBeskrivelse,
+                                 ZonedDateTime tidspunktForAbandonering) {
+        super(Identifiseringsmate.SARSKILT_IDENTIFISERT, type, typeBeskrivelse, eierandel, tidspunktForAbandonering);
         this.identifikator = identifikator;
         this.identifiseringstype = identifiseringstype;
         this.identifiseringstypeBeskrivelse = identifiseringstypeBeskrivelse;

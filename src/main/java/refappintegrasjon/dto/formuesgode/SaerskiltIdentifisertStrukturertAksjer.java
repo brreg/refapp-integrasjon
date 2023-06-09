@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+import java.time.ZonedDateTime;
+
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
@@ -17,8 +19,15 @@ public class SaerskiltIdentifisertStrukturertAksjer extends Formuesgode {
     private String aksjeklasseidentifikator;
 
     @Builder
-    public SaerskiltIdentifisertStrukturertAksjer(String type, String typeBeskrivelse, Brok eierandel, String organisasjonsnummer, String antallAksjer, String aksjeklasseBeskrivelse, String aksjeklasseidentifikator) {
-        super(Identifiseringsmate.SARSKILT_IDENTIFISERT_STRUKTURERT_AKSJER, type, typeBeskrivelse, eierandel);
+    public SaerskiltIdentifisertStrukturertAksjer(String type,
+                                                  String typeBeskrivelse,
+                                                  Brok eierandel,
+                                                  String organisasjonsnummer,
+                                                  String antallAksjer,
+                                                  String aksjeklasseBeskrivelse,
+                                                  String aksjeklasseidentifikator,
+                                                  ZonedDateTime tidspunktForAbandonering) {
+        super(Identifiseringsmate.SARSKILT_IDENTIFISERT_STRUKTURERT_AKSJER, type, typeBeskrivelse, eierandel, tidspunktForAbandonering);
         this.organisasjonsnummer = organisasjonsnummer;
         this.antallAksjer = antallAksjer;
         this.aksjeklasseBeskrivelse = aksjeklasseBeskrivelse;

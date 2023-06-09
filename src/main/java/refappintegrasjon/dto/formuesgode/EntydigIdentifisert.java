@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,9 +19,13 @@ public class EntydigIdentifisert extends Formuesgode {
     private List<String> historiskRegistreringsnummerMotorvogn;
 
     @Builder
-    public EntydigIdentifisert(String type, String typeBeskrivelse, Brok eierandel,
-                               String registreringsnummerMotorvogn, List<String> historiskRegistreringsnummerMotorvogn) {
-        super(Identifiseringsmate.ENTYDIG_IDENTIFISERT, type, typeBeskrivelse, eierandel);
+    public EntydigIdentifisert(String type,
+                               String typeBeskrivelse,
+                               Brok eierandel,
+                               String registreringsnummerMotorvogn,
+                               List<String> historiskRegistreringsnummerMotorvogn,
+                               ZonedDateTime tidspunktForAbandonering) {
+        super(Identifiseringsmate.ENTYDIG_IDENTIFISERT, type, typeBeskrivelse, eierandel, tidspunktForAbandonering);
         this.registreringsnummerMotorvogn = registreringsnummerMotorvogn;
         this.historiskRegistreringsnummerMotorvogn = new ArrayList<>(historiskRegistreringsnummerMotorvogn);
     }
