@@ -19,4 +19,5 @@ public class Gjeldsordning {
     private String kravMeldesTil;
     private Integer gjeldsordningsperiodeAntallMaaneder;
     private Integer gjeldsordningsperiodeAntallAar;
+    private String namsmannensSaksnummer;
 }
