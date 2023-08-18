@@ -8,10 +8,10 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
 import org.springframework.web.util.UriComponentsBuilder;
-import refappintegrasjon.dto.endringslogg.EndringsloggRequest;
-import refappintegrasjon.dto.endringslogg.EndringsloggResponse;
-import refappintegrasjon.dto.totalbestand.TotalbestandRequest;
-import refappintegrasjon.dto.totalbestand.TotalbestandResponse;
+import refappintegrasjon.dto.losore.endringslogg.EndringsloggRequest;
+import refappintegrasjon.dto.losore.endringslogg.EndringsloggResponse;
+import refappintegrasjon.dto.losore.totalbestand.TotalbestandRequest;
+import refappintegrasjon.dto.losore.totalbestand.TotalbestandResponse;
 
 import java.net.URI;
 import java.time.ZonedDateTime;
@@ -30,7 +30,7 @@ public class LosoreTlgBestandConsumer {
     private final WebClient webClient;
 
     public LosoreTlgBestandConsumer(MaskinportenTokenConsumer maskinportenTokenConsumer,
-                                    @Value("${endpoint.url}") String host,
+                                    @Value("${endpoint.losore}") String host,
                                     WebClient webClient) {
         this.maskinportenTokenConsumer = maskinportenTokenConsumer;
         this.host = host;

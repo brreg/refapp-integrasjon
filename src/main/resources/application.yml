@@ -12,7 +12,8 @@ logging:
 
 ## Hosts ##
 endpoint:
-  url: <losore-tlg-url>
+  losore: <losore-tlg-url>
+  ektepakt: <ektepakt-tlg-url>
 
 ##Se dokumentasjon her for hvordan man får tak i klient id og scope: https://brreg.github.io/docs/apidokumentasjon/losoreregisteret/itu-utt/mp-integrasjonsveiledning/
 ##Client får man ved forespørsel fra fra difi

@@ -7,7 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.util.UriComponentsBuilder;
-import refappintegrasjon.dto.oppslag.RettsstiftelseV2Wrapper;
+import refappintegrasjon.dto.losore.oppslag.RettsstiftelseV2Wrapper;
 
 import java.net.URI;
 
@@ -24,7 +24,7 @@ public class LosoreTlgOppslagConsumer {
     private final WebClient webClient;
 
     public LosoreTlgOppslagConsumer(MaskinportenTokenConsumer maskinportenTokenConsumer,
-                                    @Value("${endpoint.url}") String host,
+                                    @Value("${endpoint.losore}") String host,
                                     WebClient webClient) {
         this.maskinportenTokenConsumer = maskinportenTokenConsumer;
         this.host = host;

@@ -1,4 +1,4 @@
-package refappintegrasjon.dto.adresse;
+package refappintegrasjon.dto.losore.aktor;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Adressenummer {
-    private String nummer;
-    private String bokstav;
+public class Personnavn {
+    private String fornavn;
+    private String mellomnavn;
+    private String etternavn;
 }
