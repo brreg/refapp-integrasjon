@@ -2,7 +2,7 @@ package refappintegrasjon.service;
 
 import org.springframework.stereotype.Service;
 import refappintegrasjon.consumer.LosoreTlgOppslagConsumer;
-import refappintegrasjon.dto.oppslag.RettsstiftelseV2Wrapper;
+import refappintegrasjon.dto.losore.oppslag.RettsstiftelseV2Wrapper;
 
 @Service
 public class LosoreTlgOppslagService {

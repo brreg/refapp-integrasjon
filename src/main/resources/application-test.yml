@@ -1,6 +1,7 @@
 ## Hosts ##
 endpoint:
-  url: https://losoreregisteret.ppe.brreg.no/registerinfo
+  losore: https://losoreregisteret.ppe.brreg.no/registerinfo
+  ektepakt: https://ektepaktregisteret.ppe.brreg.no/ektepakt
 
 ## Maskinporten ##
 issuer:

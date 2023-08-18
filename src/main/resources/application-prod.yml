@@ -1,6 +1,7 @@
 ## Hosts ##
 endpoint:
-  url: https://losoreregisteret.brreg.no/registerinfo
+  losore: https://losoreregisteret.brreg.no/registerinfo
+  ektepakt: https://ektepaktregisteret.brreg.no/ektepakt
 
 ## Maskinporten ##
 issuer: <client_id>
