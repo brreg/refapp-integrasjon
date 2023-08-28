@@ -20,4 +20,5 @@ public class Gjeldsordning {
     private Integer gjeldsordningsperiodeAntallMaaneder;
     private Integer gjeldsordningsperiodeAntallAar;
     private String saksnummerNamsmann;
+    private String beskrivelseAvForlengelse;
 }
