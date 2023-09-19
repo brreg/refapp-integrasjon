@@ -5,8 +5,8 @@ endpoint:
 
 ## Maskinporten ##
 issuer:
-audience: https://ver2.maskinporten.no/
-token.endpoint: https://ver2.maskinporten.no/token
+audience: https://test.maskinporten.no/
+token.endpoint: https://test.maskinporten.no/token
 scope: brreg:losore/tlg
 
 keystore:

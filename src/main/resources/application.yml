@@ -20,8 +20,8 @@ endpoint:
 ##Scope får man fra docs eller brsys
 
 issuer: <client_id>
-audience: https://ver2.maskinporten.no/
-token.endpoint: https://ver2.maskinporten.no/token
+audience: https://test.maskinporten.no/
+token.endpoint: https://test.maskinporten.no/token
 scope: <scope>
 
 keystore:
