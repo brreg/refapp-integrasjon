@@ -20,8 +20,8 @@ import java.util.List;
 @JsonPropertyOrder({
         "dokumentnummer", "type", "typeBeskrivelse", "status", "statusBeskrivelse",
         "innkomsttidspunkt", "beslutningstidspunkt", "avgrensingRettsstiftelse", "utlopRettsvernstid",
-        "slettet", "paategning", "rolle", "formuesgode", "prioritetsvikelse", "krav",
-        "konkurs", "saerskiltPrioritet", "skifteutlegg", "vergemaal", "gjeldsordning"
+        "slettet", "sletteaarsak", "sletteaarsakBeskrivelse", "paategning", "rolle", "formuesgode",
+        "prioritetsvikelse", "krav", "konkurs", "saerskiltPrioritet", "skifteutlegg", "vergemaal", "gjeldsordning"
 })
 public class Rettsstiftelse {
     private String dokumentnummer;
@@ -35,6 +35,8 @@ public class Rettsstiftelse {
     // For endringslogg/totalbestand
     private LocalDate utlopRettsvernstid;
     private LocalDate slettet;
+    private String sletteaarsak;
+    private String sletteaarsakBeskrivelse;
     private List<String> paategning;
 
     private List<Rolle> rolle;
