@@ -11,13 +11,10 @@ import refappintegrasjon.dto.adresse.GeografiskAdresse;
 @EqualsAndHashCode(callSuper = true)
 public class AnnenAktor extends Aktor {
     private String navn;
-    private GeografiskAdresse postadresse;
 
     @Builder
     public AnnenAktor(GeografiskAdresse geografiskAdresse, String navn) {
         super(AktorType.ANNEN_AKTOR, geografiskAdresse);
         this.navn = navn;
-        //NOTE Denne skal være med i endringslogg/totalbestand, IKKE oppslag
-        this.postadresse = geografiskAdresse;
     }
 }
