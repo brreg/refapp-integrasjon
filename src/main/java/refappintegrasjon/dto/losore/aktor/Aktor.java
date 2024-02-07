@@ -24,6 +24,6 @@ import refappintegrasjon.dto.adresse.GeografiskAdresse;
 })
 public class Aktor {
     private AktorType aktorType;
-    //NOTE Denne skal være med i oppslag, IKKE endringslogg/totalbestand
+    //NOTE Denne skal være med i oppslag, IKKE endringslogg/totalbestand for person og virksomhet
     private GeografiskAdresse adresse;
 }
