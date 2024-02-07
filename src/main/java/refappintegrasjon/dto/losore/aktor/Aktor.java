@@ -20,7 +20,7 @@ import refappintegrasjon.dto.adresse.GeografiskAdresse;
 @AllArgsConstructor
 @JsonPropertyOrder({
         "aktorType", "personnavn", "fodselsnummerEllerDNummer", "navn",
-        "organisasjonsnummer", "adresse", "postadresse"
+        "organisasjonsnummer", "adresse"
 })
 public class Aktor {
     private AktorType aktorType;
